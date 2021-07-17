@@ -118,9 +118,15 @@ public class Strings {
         System.out.println(x);
 
 
+        String string1 = ("Satyam");
 
-
-
+        for (int i = 0; i < string1.length(); i++) {
+            System.out.print(string1.charAt(i) + " ");
+        }
+        System.out.println();
+        for (int i = string1.length()-1; true; i--) {
+            System.out.print(string1.charAt(i) + " ");
+        }
     }
 
 
