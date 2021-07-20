@@ -19,13 +19,13 @@ class Employee{
 public class Custom_Class {
     public static void main(String[] args) {
 
-        Employee satyam = new Employee();
-        satyam.id = 12;
-        satyam.salary = 1000000;
-        satyam.name = "Satyam Gupta";
-
-        satyam.printDetails();
-        satyam.getSalary();
+//        TeslaEmployee satyam = new TeslaEmployee();
+//        satyam.id = 12;
+//        satyam.salary = 1000000;
+//        satyam.name = "Satyam Gupta";
+//
+//        satyam.printDetails();
+//        satyam.getSalary();
 
 
 

@@ -58,8 +58,8 @@ public class Getters_Setters {
 
 //          !AGAR YE BHI NHI KRMA HAI TOH
 
-            Student s = new Student();
-            System.out.println(s.getRollno());
+//            NewStudent s = new NewStudent();
+//            System.out.println(s.getRollno());
 //          System.out.println(s.getName());
     }
 }
