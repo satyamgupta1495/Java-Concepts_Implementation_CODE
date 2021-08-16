@@ -2,8 +2,6 @@ package com.collectionFramework.stackQueue;
 
 public class stack {
 
-
-
     int[] stack = new int[5];
     int top = 0;
 
@@ -35,9 +33,9 @@ public class stack {
 
 //        st.show();
 //        st.pop();
-//        st.pop();
+        st.pop();
 
-//        st.show();
+        st.show();
         System .out.println("--------");
 
         st.peek();
