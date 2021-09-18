@@ -1,24 +1,23 @@
 package com.collectionFramework;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
+import java.util.*;
+
 
 public class C6_Collections_Maps {
     public static void main(String[] args) {
 
-        Map<String, Integer> map = new HashMap();
+//        Map<String, Integer> map = new HashMap();
+//
+//
+//        map.put("One" , 1);
+//        map.put("Two" , 2);
+//        map.put("Three" , 3);
+//        map.put("Four" , 4);
+//        map.put("Five" , 5);
+//
+//        System.out.println(map);
 
-
-        map.put("One" , 1);
-        map.put("Two" , 2);
-        map.put("Three" , 3);
-        map.put("Four" , 4);
-        map.put("Five" , 5);
-
-        System.out.println(map);
-
+        Map<String, String> map = new HashMap();
 /*        Map<String, String> map = new HashMap();
 
         map.put("Name", "Satyam");
@@ -49,6 +48,11 @@ public class C6_Collections_Maps {
  */
 //!--------------------------------------------------------------------------------------------------------------------------
 
+        Set<Map.Entry<String,String>> values = map.entrySet();
+        for (Map.Entry<String,String> elements: values   ) {
+            System.out.println(elements.getKey() + " " + elements.getValue());
+            elements.setValue("111");
+        }
         //! Key k according Sort karega [Dictonary Order for String]
         //? Complecxity O(log n)
         Map<String, Integer> tree = new TreeMap<>();

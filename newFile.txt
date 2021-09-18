@@ -1,2 +1,12 @@
-This is the first line of the new file!
-NIKAL LE BHAI!
+Arrays are created in heap memory and are not continus in heap memory due to JVM
+
+Primitives [int, char , boolean]  are stored in STACK ans all the Objects are stored in HEAP
+
+-> What is NULL?
+
+ 1- Literal
+ 2- Special value
+ 3- By default value of reference variable
+
+
+ // internal working of OBJECTS ARRAY

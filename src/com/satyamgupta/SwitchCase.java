@@ -1,7 +1,14 @@
 package com.satyamgupta;
 
+import java.util.ArrayList;
+
 public class SwitchCase {
     public static void main(String[] args) {
+
+        ArrayList<Long> list = new ArrayList<>();
+        int a = 10;
+        list.add((long)a);
+
         int day = 2;
         String todayDay;
         switch (day){

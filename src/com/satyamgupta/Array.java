@@ -2,6 +2,8 @@ package com.satyamgupta;
 
 import java.util.Scanner;
 
+//! ARRAYS are not continous in HEAP memory because of JVM
+
 public class Array {
 
     public static void main(String[] args) {

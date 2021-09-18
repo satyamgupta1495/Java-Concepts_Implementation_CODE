@@ -13,6 +13,14 @@ public class C0_Collections_Comparable_Comparator {
         students.add(new Student(130, "Justin"));
         students.add(new Student(180, "Anuj"));
 
+        /* The compare() method in Java compares two class specific objects (x, y) given as parameters. It returns the value:
+
+             0: if (x==y)
+            -1: if (x < y)
+            1: if (x > y)
+
+         */
+
         Collections.sort(students, new Comparator<Student>() {
             @Override
             public int compare(Student o1, Student o2) {
@@ -20,6 +28,8 @@ public class C0_Collections_Comparable_Comparator {
                 return 0;
             }
         });
+
+
 
         students.forEach(System.out::println);
 

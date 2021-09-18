@@ -1,5 +1,7 @@
 package com.datastructure.DynamicProgramming;
 
+import static java.lang.Math.max;
+
 public class KnapSackTopDown {
 
     int knapSack(int[] wt, int[] val, int W, int n)
@@ -14,7 +16,7 @@ public class KnapSackTopDown {
         }
 
         if (wt[n-1] <=  W){
-            return tn[n][W]  = Math.max((val[n-1] + tn[n-1][W - wt[n-1]]),tn[n-1][W]);
+            return tn[n][W]  = max((val[n-1] + tn[n-1][W - wt[n-1]]),tn[n-1][W]);
         }
         else
             return tn[n][W] = tn[n-1][W];
@@ -25,7 +27,7 @@ public class KnapSackTopDown {
 
         int val[] = new int[] { 60, 100, 120,60, 100, 120 };
         int wt[] = new int[] { 10, 20, 30,60, 100, 120 };
-        int W = 10;
+        int W = 7;
         int n = val.length;
         KnapSackTopDown ks = new KnapSackTopDown();
         int res = ks.knapSack(wt, val,W,n);

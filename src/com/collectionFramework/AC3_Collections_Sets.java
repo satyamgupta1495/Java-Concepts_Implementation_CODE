@@ -53,6 +53,10 @@ public class AC3_Collections_Sets {
         tSet.add(64);
         System.out.println("Tree-Set -> "+ tSet);
 
+        set.contains(2);
+        for (int val:set) {
+
+        }
 
 
 

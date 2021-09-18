@@ -172,10 +172,10 @@ public class ArraysMediumQuestions {
 //        med.alternateNumbers(arr);
 //        med.factorialOfLargeNumber(100);
 //          med.rowWithMax1s(arr,4,4);
-//        med.printSpiral(arr,4,4);
+        med.printSpiral(arr,4,4);
 
-        int[] arr1 = {-2,-3,4,-1,-2,5,-3};
-        med.maxSubArray(arr1);
+//        int[] arr1 = {-2,-3,4,-1,-2,5,-3};
+//        med.maxSubArray(arr1);
 
 
     }

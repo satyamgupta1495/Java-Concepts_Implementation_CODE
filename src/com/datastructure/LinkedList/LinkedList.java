@@ -3,26 +3,23 @@ package com.datastructure.LinkedList;
 public class LinkedList{
 
     Node head;
-
-
-    static class Node{
+    static class Node
+    {
         int data;
         Node next = null;
     }
 
-
-    static Node getNode(int data){
-
+    static Node getNode(int data)
+    {
         Node new_Node = new Node();
         new_Node.data = data;
         new_Node.next = null;
 
         return new_Node;
-
     }
 
-    public void insertAtEnd(int data){
-
+    public void insertAtEnd(int data)
+    {
         Node new_Node  = getNode(data);
         System.out.println(new_Node);
         Node n = head;
@@ -38,7 +35,6 @@ public class LinkedList{
 
             n.next = new_Node;
         }
-
     }
 
     public void insertAtFront(int data){
@@ -57,8 +53,8 @@ public class LinkedList{
 
     }
 
-    public void insertAtAnyLocation(int data, int index){
-
+    public void insertAtAnyLocation(int data, int index)
+    {
         Node new_Node = getNode(data);
 
         Node n = head;

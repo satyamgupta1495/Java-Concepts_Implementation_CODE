@@ -1,5 +1,7 @@
 package com.datastructure.DynamicProgramming;
 
+import java.util.Arrays;
+
 public class KnapSackMemoization {
 
     static int knapSackRecursive(int[] wt, int[] val, int W, int n, int[][] dp)
@@ -24,6 +26,9 @@ public class KnapSackMemoization {
             for (int j = 0; j < W+1; j++) {
                 dp[i][j]  = -1;
             }
+        }
+        for (int[] elem: dp ) {
+            Arrays.fill(elem,-1);
         }
 
         return  knapSackRecursive(wt,val,W,n,dp);

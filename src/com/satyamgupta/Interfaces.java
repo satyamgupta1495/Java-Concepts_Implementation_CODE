@@ -2,7 +2,6 @@ package com.satyamgupta;
 
 //? INTERFACES  can extends INTERFACES
 
-
 interface Bicycle{
     // final hai !
     int a = 45;
@@ -41,13 +40,54 @@ class AvonCycle implements  HornBicycle{
     }
 }
 
+interface Animal{
+    void play();
+
+    static void staticStand(){
+        System.out.println("Inside static function of Animal INterface");
+    }
+}
+
+class Dog1 implements Animal{
+
+    @Override
+    public void play() {
+        System.out.println("Dog is playing");
+    }
+}
+
+
+
+
+
 public class Interfaces {
+
     public static void main(String[] args) {
-        AvonCycle cycle = new AvonCycle();
+
+     /*   AvonCycle cycle = new AvonCycle();
         cycle.applyBreak(10);
         System.out.println(cycle.a);
         cycle.blowHornDDLJ();
         cycle.speedUp(2);
 
+      */
+
+
+        Animal d = new Dog1();
+//        ! DOG d = new Animal();
+        d.play();
+
+        Animal animal = new Animal() {
+            @Override
+            public void play() {
+                System.out.println("Animal is playing");
+            }
+        };
     }
+
+
+
+
+
+
 }

@@ -1,6 +1,29 @@
 package com.hackerRank.problemSolving;
 
 public class StockBuySell {
+
+    int bruteForce(int[] prices){
+        int max_profit = 0;
+
+        for(int i = 0; i < prices.length; i++){
+            for(int j = i+1; j < prices.length; j++)
+            {
+
+                    int curr_profit =  prices[j] - prices[i] ;
+                    System.out.println(curr_profit);
+                    System.out.println("i = " + i + " j " + j);
+
+                    if(curr_profit > max_profit)
+                    {
+                        max_profit = Math.max(max_profit,curr_profit);
+
+                }
+
+            }
+        }
+        return max_profit;
+    }
+
     public int maxProfit(int[] prices) {
 
         int buy = prices[0];
@@ -55,6 +78,6 @@ public class StockBuySell {
         int[] array = {2,4,1};
 //        int[] array = {7,1,5,3,6,4};
         StockBuySell bs = new StockBuySell();
-        System.out.println(bs.minSoFar(array));
+        System.out.println(bs.bruteForce(array));
     }
 }

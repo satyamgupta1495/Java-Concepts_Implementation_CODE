@@ -34,6 +34,12 @@ public class AC1_Collections_ArrayList {
         System.out.println(list);
 
         System.out.println(list.contains(77));
+
+        List<List<Integer>> finalList = new ArrayList<>();
+        finalList.add(list);
+        finalList.add(list2);
+        System.out.println(finalList);
+
 //*       list.forEach(System.out::println);  //?Stream API : Lambda Expression
 
     }
