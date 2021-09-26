@@ -2,7 +2,7 @@ package com.datastructure.DynamicProgramming;
 
 import java.util.Arrays;
 
-public class CountSubSet {
+public class K3_CountSubSet {
     public static void main(String[] args) {
 //        int[] arr = {2,3,5,6,8,10} -> 3;
 //        int[] arr = {1,2,3} ;

@@ -19,9 +19,6 @@ public class OrderAgnosticBS {
     static int search(int[] array,int target){
         int start = 0;
         int end = array.length-1;
-
-
-
         while(start <= end)
         {
             int mid = (start + end) / 2;
