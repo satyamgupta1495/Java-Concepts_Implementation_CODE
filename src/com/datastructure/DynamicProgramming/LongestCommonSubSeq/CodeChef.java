@@ -1,20 +1,41 @@
 package com.datastructure.DynamicProgramming.LongestCommonSubSeq;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
-public class LCS3_Substring {
-    static int[][] dp = new int[100][100];
+public class CodeChef {
     public static void main(String[] args) {
-        String s1 = "ABCxxxDGH";
-        String s2 = "ACDxxxGHR";
-        int ans = getSubString(s1,s2, s1.length(), s2.length());
-        System.out.println(ans);
+
+        Scanner scan = new Scanner(System.in);
+
+        int n = scan.nextInt();
+        int k = scan.nextInt();
+        StringBuilder sb1 = new StringBuilder(n);
+        StringBuilder sb2 = new StringBuilder(n);
+        sb1.append(scan.next());
+        sb2.append(scan.next());
+
+        System.out.println(n  + " " + k + " " + sb1 + " " + sb2);
+
+        String lcs = getLCS(sb1.toString(),sb2.toString(),n,k);
+
+//        System.out.println(lcs);
+        if (lcs.length() < k) {
+            System.out.println("-1");
+        }
+        else {
+            PriorityQueue<Character> pq = new PriorityQueue<>();
+            for (int i = 0; i < lcs.length(); i++) {
+                pq.add(lcs.charAt(i));
+                if (pq.size() > k){
+                    pq.poll();
+                }
+            }
+            System.out.println(pq.poll());
+        }
+
     }
 
-    static int getSubString(String s1, String s2, int n, int m){
+    static String getLCS(String s1, String s2, int n, int m){
         int[][] dp = new int[n+1][m+1];
         int max = 0;
 
@@ -48,12 +69,12 @@ public class LCS3_Substring {
         }
 
         //!Printing the SubString
-        List<Character> list = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
 
         int i = n, j = m;
         while(i > 0 && j > 0){
             if (s1.charAt(i - 1) == s2.charAt(j - 1)) {
-                list.add(s1.charAt(i-1));
+                sb.append(s1.charAt(i-1));
                 i--;
                 j--;
             } else {
@@ -64,10 +85,14 @@ public class LCS3_Substring {
                 }
             }
         }
-        Collections.reverse(list);
-        System.out.println(list);
 
-        return max;
+        System.out.println(sb);
+
+        return sb.toString();
 
     }
+
+
+
+
 }
