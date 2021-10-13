@@ -1,6 +1,10 @@
 package com.collectionFramework;
 
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 class Test2 {
     public static void main(String[] args) {
 //
@@ -18,13 +22,21 @@ class Test2 {
 //            System.out.println();
 //            }
 //        }
-        int a = 4;
-        int sum = mySum(a);
-        if (sum == 0) {
-            System.out.println(1);
-        } else if (sum == a) {
-            System.out.println(Test2.mySum(a));
-        }
+//        int a = 4;
+//        int sum = mySum(a);
+//        if (sum == 0) {
+//            System.out.println(1);
+//        } else if (sum == a) {
+//            System.out.println(Test2.mySum(a));
+//        }
+
+        //!
+
+
+//        List<Character> list1 = new ArrayList<>();
+
+
+
     }
 
 static int mySum(int a){

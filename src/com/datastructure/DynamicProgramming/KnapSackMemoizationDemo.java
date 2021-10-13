@@ -18,14 +18,10 @@ public class KnapSackMemoizationDemo {
 
    static int dpmemo(int[] wt, int[] val, int W, int n){
        int[][] dp = new int[n+1][W+1];
-
        for (int[] elem: dp) {
            Arrays.fill(elem,-1);
        }
-
        return KnapSackReccur(wt,val, W,n, dp);
-
-
    }
 
     public static void main(String[] args)
