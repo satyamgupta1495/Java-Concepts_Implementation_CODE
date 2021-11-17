@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class CPTricks {
     public static void main(String[] args) {
-        largeArrayInput();
+
         //! POWER
         //System.out.println(fastPower(3,5));
 
@@ -15,14 +15,10 @@ public class CPTricks {
 //            System.out.println(i + " " +ans[i]);
 //        }
         //! GCD
-//        System.out.println(gcd(60, 24));
+        System.out.println(myMod(2, 7));
     }
 
-    static void largeArrayInput(){
-        System.out.println(Long.MAX_VALUE);
-        System.out.println(Long.MIN_VALUE);
 
-    }
 
     static int trailingZeros(int n){
         int res = 0;
@@ -39,7 +35,9 @@ public class CPTricks {
  */
     static int gcd(int a, int b){
 
-        if (b == 0) return a;
+        if (b == 0) {
+            return a;
+        }
         return gcd(b, a%b);
     }
 
@@ -68,4 +66,13 @@ public class CPTricks {
         }
         return res;
     }
+
+    static int myMod(int a, int b){
+
+        if(b == 0) return a;
+
+        return myMod(b, a%b);
+
+    }
+
 }

@@ -19,7 +19,7 @@ public class AC2_Collectiomns_PriorityQueue {
         pQueue.offer(91);
         pQueue.offer(99);
 //        pQueue.size()
-    pQueue.remove();
+//    pQueue.remove();
     pQueue.poll();
         System.out.println(pQueue);
 

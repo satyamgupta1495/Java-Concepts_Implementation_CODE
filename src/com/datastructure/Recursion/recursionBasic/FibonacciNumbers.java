@@ -1,4 +1,4 @@
-package com.datastructure.recursionBasic;
+package com.datastructure.Recursion.recursionBasic;
 
 public class FibonacciNumbers {
     public static void main(String[] args) {

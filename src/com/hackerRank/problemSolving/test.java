@@ -4,30 +4,33 @@ import java.util.*;
 
 public class test {
 
-        static int maxRange(int[] arr, int start, int end) {
-            if ( arr == null) {
-                return -1;
-            }
-            int max = arr[start];
-
-            for(int i = start; i <= end; i++) {
-                if ( arr[i] > max) {
-                    max = arr[i];
-                }
-            }
-            return max;
-        }
-
     public static void main(String[] args) {
+        int[] nums = {2,3,-2,4};
+        int ans = nums[0];
+        int currMin = 1, currMax = 1;
 
-        int[] arr = {11, 24, 13, 35, 15};
-        int ans = maxRange(arr, 1, 3);
+        List<Integer> cmin = new ArrayList<>();
+        List<Integer> cmax = new ArrayList<>();
+        List<Integer> tmp = new ArrayList<>();
+        List<Integer> answer = new ArrayList<>();
+        for(int i = 0; i< nums.length; ++i){
+            int temp = currMin;
+            tmp.add(temp);
+
+            cmin.add(currMin);
+            currMin = Math.min(nums[i] *currMin, nums[i]*currMax);
+            currMin = Math.min(currMin, nums[i]);
+
+
+            cmax.add(currMax);
+            currMax = Math.max(nums[i] *currMax, nums[i]*temp);
+            currMax = Math.max(currMax, nums[i]);
+            ans = Math.max(ans, currMax);
+            answer.add(ans);
+        }
         System.out.println(ans);
-
-        Scanner scan = new Scanner(System.in);
-        String s = scan.nextLine();
-        System.out.println(s);
-
+        System.out.println(cmin);
+        System.out.println(tmp);
+        System.out.println(cmax);
     }
-
 }

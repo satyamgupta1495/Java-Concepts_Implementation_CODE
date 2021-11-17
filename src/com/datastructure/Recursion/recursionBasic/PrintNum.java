@@ -1,4 +1,4 @@
-package com.datastructure.recursionBasic;
+package com.datastructure.Recursion.recursionBasic;
 
 public class PrintNum {
     public static void main(String[] args) {

@@ -40,6 +40,7 @@ public class AC1_Collections_ArrayList {
         finalList.add(list2);
         System.out.println(finalList);
 
+
 //*       list.forEach(System.out::println);  //?Stream API : Lambda Expression
 
     }
