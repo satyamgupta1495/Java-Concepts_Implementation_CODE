@@ -24,18 +24,10 @@ public class PalindromePartitioningBottomUp {
     static int solve(String s, int i, int j) {
 
         if (i >= j) return 0;
-
         if (isPalindrome(s, i, j )) return 0;
-
         if (dp[i][j] != -1) return dp[i][j];
-
-
-
         int left = 0, right = 0;
-
-
         for (int k = i; k < j ; ++k) {
-
             int temp = 0;
             if (dp[i][k] != -1) left = dp[i][k];
             else {
@@ -48,7 +40,6 @@ public class PalindromePartitioningBottomUp {
                 dp[k + 1][j] = right;
             }
         }
-
         return  1+left+right;
     }
 
@@ -60,8 +51,6 @@ public class PalindromePartitioningBottomUp {
         String s1 = s.substring(i,j);
         return s1.equals(sb.reverse().toString());
          */
-
-
         if (i == j) return true;
         if (i > j) return true;
         while( i < j){

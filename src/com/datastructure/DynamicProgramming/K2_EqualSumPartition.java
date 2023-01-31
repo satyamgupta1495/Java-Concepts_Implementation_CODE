@@ -4,7 +4,7 @@ package com.datastructure.DynamicProgramming;
 public class K2_EqualSumPartition {
 
     public static void main(String[] args) {
-        int[] arr = {5,3,1};
+        int[] arr = {5,2,1};
         boolean ans = equalSum(arr,11, arr.length);
         System.out.println(ans);
     }

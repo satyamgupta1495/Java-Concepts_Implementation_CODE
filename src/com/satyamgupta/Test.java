@@ -3,101 +3,151 @@ package com.satyamgupta;
 import java.util.*;
 
 public class Test {
+    public static void main(String[] args) {
+        int[] arr = {6,5,4,3,1};
+        quickSort(arr, 0, arr.length-1);
 
-    static List<Integer> spiralOrder(int[][] matrix) {
+
+        int[][] matrix = {
+                {1,2,3},
+                {4,5,6},
+                {7,8,9}
+        };
+        List<Integer> res = spiralMatrix(matrix);
+        int x = 0;
+        int[][] ans = new int[matrix.length][matrix[0].length];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                ans[i][j] = res.get(x);
+                ++x;
+            }
+        }
+
+        for (int[] val: ans  ) {
+            System.out.println(Arrays.toString(val));
+        }
+
+
+    }
+
+
+    static List<Integer> spiralMatrix(int[][] mat) {
         List<Integer> list = new ArrayList<>();
-
         int rowBegin = 0;
-        int rowEnd = matrix.length-1;
         int colBegin = 0;
-        int colEnd = matrix[0].length-1;
+        int rowEnd = mat.length-1;
+        int colEnd = mat[0].length-1;
 
-        while(rowBegin <= rowEnd && colBegin <= colEnd)
-        {
-            for(int i = colBegin; i <= colEnd; i++){
-                list.add(matrix[rowBegin][i]);
+        while(rowBegin <= rowEnd && colBegin <= colEnd) {
+            for (int i = colBegin; i <= colEnd; i++) {
+                list.add(mat[rowBegin][i]);
             }
             rowBegin++;
 
-            for(int i = rowBegin; i <= rowEnd; i++){
-                list.add(matrix[i][colEnd]);
+            for (int i = rowBegin; i <= rowEnd; i++) {
+                list.add(mat[i][colEnd]);
             }
             colEnd--;
 
-            if (rowBegin <= rowEnd) {
+            if (rowBegin <= rowEnd){
+
                 for (int i = colEnd; i >= colBegin; i--) {
-                    list.add(matrix[rowEnd][i]);
+                    list.add(mat[rowEnd][i]);
                 }
-
-            }
-            rowEnd--;
-            if (colBegin < colEnd) {
-                for (int i = rowEnd; i >= rowBegin; i--) {
-                    list.add(matrix[i][colBegin]);
-                }
-
-            }
-            colBegin++;
-
         }
-        System.out.println(list);
+            rowEnd--;
+
+            if (colBegin <= colEnd){
+
+                for (int i = rowEnd; i >= rowBegin; i--) {
+                    list.add(mat[i][colBegin]);
+                }
+        }
+            colBegin++;
+        }
+
         return list;
     }
 
-    /*
-     int count = 0;
-        List<List<Integer>> finalList = new ArrayList<>();
+    static void quickSort(int[] arr, int lo, int hi){
 
-        List<Integer> list1 = new ArrayList<>();
-        for(int i = 0; i < 3; i++){
-            list1.add(list.get(count));
-        }
+        if (lo >= hi) return;
+        int s = lo, e = hi;
+        int mid = s + (e-s)/2;
 
-        List<Integer> list2 = new ArrayList<>();
-        for(int i = 3; i < 6; i++){
-            list1.add(list.get(count));
-        }
+        int pivot = arr[mid];
 
-        List<Integer> list3 = new ArrayList<>();
-       for(int i = 6; i < list.size(); i++){
-            list1.add(list.get(count));
-        }
+        while(s <= e){
 
-        finalList.add(list1);
-        finalList.add(list2);
-        finalList.add(list3);
-
-        return finalList ;
-
-
-     */
-
-    public static void main(String[] args) {
-
-        int[][] arr = {{1,2,3,4},
-                {5,6,7,8},
-                {9,10,11,12}};
-//        for (int[] elem: arr) {
-//            System.out.println(Arrays.toString(elem));
-//        }
-        System.out.println();
-        spiralOrder(arr);
-
-        int n = 3;
-        int[][] matrix = new int[n][n];
-
-        int num = 1;
-        for(int i = 0; i < matrix.length; i++){
-            for(int j = 0; j < matrix[0].length; j++){
-                matrix[i][j] = num;
-                num++;
-
+            while(arr[s] < pivot){
+                ++s;
             }
+
+            while(arr[e] > pivot){
+                --e;
+            }
+
+            if (s <= e){
+                int temp = arr[s];
+                arr[s] = arr[e];
+                arr[e] = temp;
+                ++s;
+                --e;
+            }
+
+        }
+        quickSort(arr,lo,e);
+        quickSort(arr,s,hi);
+    }
+
+    static void mergeInPlace(int[] arr, int s, int e){
+
+        if (e-s == 1) return;
+
+        int mid = (s+e)/2;
+
+        mergeInPlace(arr,s, mid);
+        mergeInPlace(arr,mid,e);
+
+        merge(arr, s,mid,e);
+
+    }
+
+
+    private static void merge(int[] arr,  int s, int m, int e) {
+        int i = s , j = m, k = 0;
+        int[] res = new int[e-s];
+
+        while(i < m && j < e) {
+            if (arr[i] < arr[j]){
+                res[k] = arr[i];
+                ++i;
+            }else{
+                res[k] = arr[j];
+                ++j;
+            }
+            ++k;
         }
 
-        for (int[] elem: matrix) {
-            System.out.println(Arrays.toString(elem));
+        //! for individual remaining array
+
+        while( i < m){
+            res[k] = arr[i];
+            ++k;
+            ++i;
         }
+        while( j < e){
+            res[k] = arr[j];
+            ++k;
+            ++j;
+        }
+
+        for (int l = 0; l < res.length; l++) {
+            //! arr[s+l] only for modifying the range
+            arr[s+l] = res[l];
+        }
+
+
     }
 
 }

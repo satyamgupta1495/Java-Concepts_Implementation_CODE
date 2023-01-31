@@ -1,7 +1,5 @@
 package com.collectionFramework;
 
-import org.jetbrains.annotations.NotNull;
-
 public class Student implements Comparable<Student>{
 
     int marks;
