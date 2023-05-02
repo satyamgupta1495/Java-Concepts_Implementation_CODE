@@ -7,7 +7,7 @@ public class UnequalArrays {
 
     }
 
-    public static long solve(int N, int[] A, int[] B) {
+    public static void solve(int N, int[] A, int[] B) {
         ArrayList<Integer> even = new ArrayList<>(2);
         ArrayList<Integer>odd = new ArrayList<>(2);
         int totalSum = 0;
@@ -17,7 +17,7 @@ public class UnequalArrays {
             even.add(B[i]%2,B[i]);
         }
 
-        if(totalSum != 0 || even.get(0).size() != odd])
+
 
     }
 }
