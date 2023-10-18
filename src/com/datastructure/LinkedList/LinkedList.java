@@ -153,6 +153,17 @@ public class LinkedList{
         }
 
     }
+
+    static void displayReverse(Node head){
+        if(head.next == null) {
+            System.out.println(head.data);
+            return;
+        }
+
+        displayReverse(head.next);
+        System.out.println(head.data);
+    }
+
     public static void main(String[] args) {
 
         LinkedList list = new LinkedList();
@@ -160,12 +171,12 @@ public class LinkedList{
         //Inserting data into Linked List.
 
         list.insertAtEnd(10);
-//        list.insertAtEnd(20);
-//        list.insertAtEnd(30);
-//        list.insertAtEnd(40);
-//        list.insertAtEnd(50);
-//        list.insertAtEnd(60);
-//        list.insertAtEnd(100);
+        list.insertAtEnd(20);
+        list.insertAtEnd(30);
+        list.insertAtEnd(40);
+        list.insertAtEnd(50);
+        list.insertAtEnd(60);
+        list.insertAtEnd(100);
 
 //        list.showData();
 
@@ -188,7 +199,8 @@ public class LinkedList{
 
          System.out.println("\n-------------------\n");
 
-         list.deleteFromEnd();
+        displayReverse(list.head);
+
         // list.showData();
 
 //        list.deleteFromAnyLocation(7);

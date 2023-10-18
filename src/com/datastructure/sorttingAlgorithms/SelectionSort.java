@@ -8,11 +8,11 @@ public class SelectionSort {
         int[] array = {38, 52, 9, 18, 6, 62, 13};
 //        inSort(array);
 
-        newInsertionSort(array);
+        selectionSort(array);
         System.out.println(Arrays.toString(array));
     }
 
-    static void newInsertionSort(int[] arr){
+    static void selectionSort(int[] arr){
         for (int i = 0; i < arr.length; i++) {
             int lastIndex = arr.length-i-1;
             int maxIndex = getMaxIndex(arr, 0, lastIndex);
