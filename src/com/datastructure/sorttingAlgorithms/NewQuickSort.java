@@ -39,24 +39,4 @@ public class NewQuickSort {
         sort(arr, s, hi);
     }
 
-    static void qickSort(int[] arr, int lo, int hi){
-
-        int s = lo;
-        int e = hi;
-        int mid = s + (e-s)/2;
-        int pivot = arr[mid];
-        while(s <= e ){
-
-            while(arr[s] < pivot) s++;
-            while(arr[e] > pivot) e--;
-
-            if (s <= e) swap(arr, e, s);
-            s++;
-            e--;
-
-        }
-    }
-
-    private static void swap(int[] arr, int e, int s) {
-    }
 }
