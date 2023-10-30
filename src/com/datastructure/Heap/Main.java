@@ -1,5 +1,8 @@
 package com.datastructure.Heap;
 
+import java.util.Arrays;
+import java.util.PriorityQueue;
+
 public class Main {
     public static void main(String[] args) throws Exception {
         Heap<Integer> heap = new Heap<>();
@@ -12,6 +15,18 @@ public class Main {
         heap.insert(33);
 
         System.out.println(heap.heapSort());
+
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        pq.add(12);
+        pq.add(22);
+        pq.add(33);
+        pq.add(11);
+
+        while(!pq.isEmpty()){
+            System.out.println(pq.poll());
+        }
+
+
 
 //        System.out.println(heap.remove());
 //        System.out.println(heap.remove());

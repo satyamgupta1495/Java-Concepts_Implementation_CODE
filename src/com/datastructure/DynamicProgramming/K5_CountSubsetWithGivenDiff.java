@@ -2,7 +2,7 @@ package com.datastructure.DynamicProgramming;
 
 public class K5_CountSubsetWithGivenDiff {
     public static void main(String[] args) {
-        int[] arr = {0,0,0,0,0,0,0,0,1};
+        int[] arr = {1,1,2,3};
 
         int ans = getSubSetWithSameDiff(arr, 1);
         System.out.println(ans);
