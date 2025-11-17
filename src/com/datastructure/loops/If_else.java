@@ -31,15 +31,15 @@ public class If_else {
 //        }
 
         switch (a) {
-            case 10 -> {
+            case 10: {
                 a = 10;
                 System.out.println("This is case 10");
             }
-            case 20 -> {
+            case 20: {
                 a = 20;
                 System.out.println("This is case 20");
             }
-            default -> System.out.println("This is default case");
+            default : System.out.println("This is default case");
         }
 
         If_else e = new If_else(77);
