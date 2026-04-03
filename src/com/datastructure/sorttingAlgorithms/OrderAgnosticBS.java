@@ -1,4 +1,4 @@
-package com.datastructure;
+package com.datastructure.sorttingAlgorithms;
 
 public class OrderAgnosticBS {
 
@@ -21,7 +21,7 @@ public class OrderAgnosticBS {
         int end = array.length-1;
         while(start <= end)
         {
-            int mid = (start + end) / 2;
+            int mid = (start + end) / 2; // start + (end-start) / 2
             if(isAgnostic(array, start, end)) {
 
                 if (array[mid] < target) {

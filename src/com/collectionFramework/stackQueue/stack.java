@@ -1,5 +1,7 @@
 package com.collectionFramework.stackQueue;
 
+import java.util.ArrayDeque;
+
 public class stack {
 
     int[] stack = new int[5];
@@ -9,6 +11,10 @@ public class stack {
         stack[top] = data;
         top++;
     }
+
+    //! top always points to the next empty position
+    //!It is NOT pointing to the current top element
+
     public void pop(){
         top--;
         stack[top] = 0;
@@ -25,6 +31,10 @@ public class stack {
     }
 
     public static void main(String[] args) {
+
+        //? same as Stack but better [used in single threaded env]
+        //! ArrayDeque<Integer> ad = new ArrayDeque<>();
+
         stack st = new stack();
 
         st.push(12);

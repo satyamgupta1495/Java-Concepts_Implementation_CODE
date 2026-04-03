@@ -1,64 +1,55 @@
 package com.collectionFramework.stackQueue;
 
-public class Queue {
+public class Practise {
 
     int[] queue = new int[5];
-    int size;
     int front = 0;
     int rear = 0;
+    int size = 0;
 
-    //! Remove from front;
-    //! enter from rear/back;
-    
-    public void enque(int data)
-    {
-        if (!isFull()) {
+    public void enque(int data){
+
+        if(!isFull()){
             queue[rear] = data;
-            //! rear = agla element kaha enter hoga !
-            rear = (rear + 1) % queue.length;  //! 5 -> Size of array
+            rear = (rear + 1) % queue.length;
             size++;
         }
-        else{
-            System.out.println("Queue is FULL");
+    }
+
+    public void deque(){
+        if (!isEmpty()){
+            front = (front + 1) % queue.length;
+            size--;
         }
     }
-    
-    public void show()
-    {
+
+    public void show(){
         for (int i = 0; i < size; i++) {
             System.out.print(queue[(front+i) % queue.length] + " ");
         }
     }
 
-    public void deque()
-    {
-        if (!isEmpty()) {
-            front = (front + 1) % queue.length;
-            size--;
-        }
-        else{
-            System.out.println("Queue is Empty");
-        }
-    }
-
-    public int getSize(){
-        return size;
-    }
+//    public void show()
+//    {
+//        for (int i = 0; i < size; i++) {
+//            System.out.print(queue[(front+i) % queue.length] + " ");
+//        }
+//    }
 
     public boolean isEmpty(){
-        return  getSize()==0;
+        return getSize() == 0;
     }
 
     public boolean isFull(){
-        return getSize()==queue.length;
+        return getSize() == queue.length;
     }
 
+    public int getSize(){ return size;}
 
     public static void main(String[] args) {
-
-        Queue q = new Queue();
+        Practise q = new Practise();
         q.enque(14);
-        q.enque(05);
+        q.enque(5);
         q.enque(20);
         q.enque(80);
         q.enque(20);
@@ -78,6 +69,6 @@ public class Queue {
         System.out.println("is full = " + q.isFull());
         System.out.println("Size = " + q.getSize());
         q.show();
-
     }
+
 }

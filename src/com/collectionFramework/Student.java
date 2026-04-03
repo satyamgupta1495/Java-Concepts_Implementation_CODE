@@ -2,6 +2,7 @@ package com.collectionFramework;
 
 public class Student implements Comparable<Student>{
 
+    // comparable / comparator both are interface.
     int marks;
     String name;
 

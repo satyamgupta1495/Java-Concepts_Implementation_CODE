@@ -1,2 +1,7 @@
 /out/
 *.class
+/node_modules
+.idea
+newFile.txt
+package-lock.json
+package*.json

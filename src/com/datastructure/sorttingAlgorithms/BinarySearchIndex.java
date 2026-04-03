@@ -1,4 +1,4 @@
-package com.datastructure;
+package com.datastructure.sorttingAlgorithms;
 
 public class BinarySearchIndex {
 // for index return end+1
