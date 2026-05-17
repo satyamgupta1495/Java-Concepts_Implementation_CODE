@@ -1,7 +1,5 @@
 package com.datastructure;
 
-import com.satyamgupta.Array;
-
 import java.util.*;
 
 public class NewStart {
@@ -17,7 +15,7 @@ public class NewStart {
 //        int k = 3;
 //        rotate(nums, k);
 
-        // moveZeroes
+//        moveZeroes
 //        int[] nums = {0,1,0,3,12};
 //        moveZeroes(nums);
 
@@ -34,17 +32,17 @@ public class NewStart {
 //        System.out.println(ans);
 
 //        int[] nums = {4,1,2,1,2};
-//        int ans = singleNumber(nums);
+//        singleNumber(nums);
 //        System.out.println(ans);
 
 //        int[] nums = {2,0,2,1,1,0};
 //        int[] nums = {1, 2 ,1};
 //        sortColors(nums);x
 
-        int[] nums = {2,2,1,1,1,2,2};
+//        int[] nums = {2,2,1,1,1,2,2};
 //        int[] nums = {5,4,5};
-        int ans = majorityElement(nums);
-        System.out.println(ans);
+//        int ans = majorityElement(nums);
+//        System.out.println(ans);
 
 //        int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
 //        int ans = maxSubArrayPrintSubarray(nums);
@@ -57,15 +55,30 @@ public class NewStart {
 //        int[] nums = {1, 2};
 //        System.out.println(maxProfit(nums));
 
-//          String s = "the sky    is blue";
-//          String ans = reverseWords(s);
-//          System.out.println(ans);
+//        String s = "the sky    is blue";
+//        String ans = reverseWords(s);
+//        System.out.println(ans);
 
-//            int[] nums = {1,2,3,4};
-//            productExceptSelf(nums);
+//        int[] nums = {1,2,3,4};
+//        productExceptSelf(nums);
 
 //        int n = 5;
 //        generate(n);
+
+//        int[] nums = {1,2};
+//        majorityElement2(nums);
+
+//        int[] nums = {8154,9139,8194,3346,5450,9190,133,8239,4606,8671,8412,6290};
+//        int ans = mostFrequentEven(nums);
+//        System.out.println(ans);
+//
+//        int[] nums = {0,2};
+//        maxProduct(nums);
+
+//        repeatedCharacter("abccbaacz");
+
+        int[] nums = {-4,-1,0,3,10};
+        sortedSquares(nums);
 
     }
 
@@ -92,14 +105,12 @@ public class NewStart {
         return set.size();
     }
 
-    ArrayList<Integer> removeDuplicates(int[] arr) {
+    public static ArrayList<Integer> removeDuplicates(int[] arr) {
         HashSet<Integer> set = new LinkedHashSet<>();
         for(int elem : arr){
             set.add(elem);
         }
-        ArrayList<Integer> l = new ArrayList<>();
-        l.addAll(set);
-        return l;
+        return new ArrayList<>(set);
     }
 
     public static int removeDuplicatesNoSet(int[] nums) {
@@ -237,26 +248,41 @@ public class NewStart {
         return res;
     }
 
-    public static int singleNumber(int[] nums) {
+    public static void singleNumber(int[] nums) {
+
+//        most optimized :
+        int ans = 0;
+        for (int num : nums) {
+            System.out.println(ans);
+            ans ^= num;
+        }
+
+        System.out.println( "ANS : " + ans);
+
+        for(int i =0 ; i<=(nums.length) % nums.length; ++i){
+            System.out.println(nums[i]);
+        }
+//        return ans;
+
         //https://leetcode.com/problems/single-number/
 //        Example 1:
 //        Input: nums = [2,2,1]
 //        Output: 1
 
-        HashMap<Integer, Integer> map = new HashMap<>();
-
-        for (int num : nums){
-            map.put(num, map.getOrDefault(num, 0) + 1 );
-        }
-
-        for (int key : map.keySet()) {
-            if(map.getOrDefault(key, 0) == 1){
-                return key;
-            }
-        }
-
-        System.out.println(map);
-        return -1;
+//        HashMap<Integer, Integer> map = new HashMap<>();
+//
+//        for (int num : nums){
+//            map.put(num, map.getOrDefault(num, 0) + 1 );
+//        }
+//
+//        for (int key : map.keySet()) {
+//            if(map.getOrDefault(key, 0) == 1){
+//                return key;
+//            }
+//        }
+//
+//        System.out.println(map);
+//        return -1;
 
     }
 
@@ -524,6 +550,111 @@ public class NewStart {
         }
 
     }
+
+    public static void majorityElement2(int[] nums) {
+        List<Integer> ls = new ArrayList<>();
+        Map<Integer, Integer> map = new HashMap<>();
+        int temp = nums.length/3;
+
+        for(int num : nums){
+            if(map.containsKey(num)){
+                map.put(num, map.getOrDefault(num, 0) + 1);
+            }else{
+                map.put(num, 1);
+            }
+        }
+
+        for(int key : map.keySet()){
+            if(map.get(key) > temp){
+                ls.add(key);
+            }
+        }
+
+        System.out.println(ls);
+    }
+
+    public static int mostFrequentEven(int[] nums) {
+        int ans = -1;
+        int occurence = -1;
+        Map<Integer, Integer> map = new TreeMap<>();
+
+        for(int num : nums){
+            if(0 == num % 2){
+                if(map.containsKey(num)){
+                    map.put(num, map.getOrDefault(num, 0) + 1);
+                }else{
+                    map.put(num, 1);
+                }
+            }
+        }
+
+        for(int key : map.keySet()){
+            if(map.get(key) > occurence){
+                occurence = map.get(key);
+                ans = key;
+            }
+        }
+
+        return ans;
+    }
+
+    public static void maxProduct(int[] nums) {
+        int res = Integer.MIN_VALUE;
+        int n = nums.length;
+        int[] arr = new int[n];
+
+        arr[0] = nums[0];
+        for (int i = 1; i < n; i++) {
+            if(nums[i] > 0){
+                arr[i] = nums[i] * nums[i-1];
+            }
+
+        }
+
+        System.out.println(Arrays.toString(arr));
+
+        for(int num : arr){
+            if(num > res){
+                res = num;
+            }
+        }
+
+        System.out.println(res);
+    }
+
+    public static void repeatedCharacter(String s) {
+
+        int num = 1;
+        int num2 = 2;
+
+        System.out.println(num ^ num2);
+
+        Set<Character> st = new HashSet<>();
+        for (int i = 0; i < s.length(); i++) {
+            if(st.contains(s.charAt(i))){
+                System.out.println(s.charAt(i));
+                break;
+            }else{
+                st.add(s.charAt(i));
+            }
+        }
+
+        // return '\0';
+    }
+
+    public static void sortedSquares(int[] nums) {
+
+//        int[] nums = {-4,-1,0,3,10};
+
+        ArrayList<Integer> neg = new ArrayList<>();
+        ArrayList<Integer> pos = new ArrayList<>();
+
+
+
+
+        System.out.println(Arrays.toString(ans));
+    }
+
 
 
     // ============================ HELPER FUNCTIONS ============================
